@@ -81,15 +81,71 @@ body {
 }
 
 .bg-video {
-    background: #ff0021;
+    background-color: #ff0021;
     position: absolute;
     z-index: -1;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .bg-video .video {
     height: 100vh;
 
+}
+
+.bg-video::after {
+    content: "";
+    background-color: #d5011b;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,1) 100%);
+}
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left: 0;
+    background-color: rgba(52, 52, 50, 0.749);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.contents-modal {
+    display:flex;
+    justify-content: center;
+    align-items: center;flex-direction: column;
+    height: 100vh;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.close-modal {
+    background-color: #fff;
+    color: #f03a17;
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modal iframe {
+    border-width: 0;
+    width: 640px;
+    height: 360px;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
 }
