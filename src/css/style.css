@@ -27,12 +27,6 @@ body {
     cursor: pointer;
 }
 
-.mobile-menu div {
-    width: 32px;
-    height: 2px;
-    background: #fff;
-    margin: 8px;
-}
 
 .header-master nav li a {
     font-weight: bold;
@@ -134,7 +128,8 @@ body {
 .contents-modal {
     display:flex;
     justify-content: center;
-    align-items: center;flex-direction: column;
+    align-items: center; 
+    flex-direction: column;
     height: 100vh;
     border-radius: 5px;
     gap: 15px;
@@ -237,16 +232,61 @@ body {
         width: 400px;
         height: 220px;
     }
-
-    #btn-mobile {
-        display: block;
-    }
     
-   
+    ul.menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    right: 0;
+    background: linear-gradient(200deg, rgba(0,0,0,5) 0%, rgba(0,0,0,0.9) 80%, rgba(0,0,0,2) 100%);
+    z-index: 1000;
+    height: 0;
+   } 
+
 
     #nav.active .menu {
+        height: calc(100vh - 90px);
         display: flex;
     }
+
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    #btn-mobile-lines {
+        border-top: 2px solid;
+        width: 20px;
+        color: #fff;
+    }
     
+    #btn-mobile-lines::after, #btn-mobile-lines::before {
+        content: '';
+        width: 20px;
+        height: 2px;
+        display: block;
+        background: #fff;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #btn-mobile-lines {
+        color: transparent;
+    }
     
+    #nav.active #btn-mobile-lines::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #btn-mobile-lines::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
 }
