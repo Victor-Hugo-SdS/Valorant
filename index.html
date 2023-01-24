@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/src/css/style.css">
+    <script src="./src/js/index.js" defer></script>
+
     <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +30,13 @@
             <img class="logo" src="./src/images/logo.png" alt="Logo">
         </a>
         
-        <nav>
+        <nav id="nav">
+            <button id="btn-mobile" class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </button>
+
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">História</a></li>
@@ -40,7 +48,7 @@
     <main class="container">
 
         <section class="contents">
-            <div>
+            <div class="mobile-contents">
                 <img class="title-valorant" src="/src/images/valorant-title-2.png" alt="Title Valorant"> 
                 
                 <p class="description">Tudo começa em 2039, em um futuro relativamente próximo, quando ocorre um evento conhecido como Primeira Luz. O fenômeno, que ocorre em vários lugares do mundo, consiste no aparecimento de estranhos anéis de luz que trazem um novo elemento ao planeta Terra. A radianita, até então desconhecida, é extremamente poderosa e se torna importantíssima para toda a humanidade</p>
